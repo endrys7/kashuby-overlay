@@ -5,48 +5,72 @@
 }
 
 html,body{
+
     width:100%;
     height:100%;
+
     background:transparent;
+
     overflow:hidden;
+
     font-family:'Orbitron',sans-serif;
+
 }
 
 #mensaje{
+
     position:absolute;
-    top:40px;
-    left:0;
-    width:100%;
-    overflow:hidden;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:1400px;
+
+    text-align:center;
+
     white-space:nowrap;
-}
 
-#mensaje span{
+    font-size:72px;
 
-    display:inline-block;
-
-    padding-left:100%;
-
-    font-size:70px;
     font-weight:900;
 
-    text-shadow:
-        0 0 10px currentColor,
-        0 0 20px currentColor,
-        0 0 40px currentColor;
+    letter-spacing:4px;
 
-    animation:marquesina linear forwards;
+    opacity:0;
+
+    transition:opacity .4s ease;
+
+    -webkit-text-stroke:2px rgba(0,0,0,.45);
+
+    text-shadow:
+
+        0 0 3px rgba(0,0,0,.4),
+        0 0 8px currentColor;
+
+    animation:pulse 1.8s ease-in-out infinite;
 
 }
 
-@keyframes marquesina{
+@keyframes pulse{
 
-    from{
-        transform:translateX(0);
+    0%{
+
+        transform:translate(-50%,-50%) scale(1);
+
     }
 
-    to{
-        transform:translateX(-200%);
+    50%{
+
+        transform:translate(-50%,-50%) scale(1.03);
+
+    }
+
+    100%{
+
+        transform:translate(-50%,-50%) scale(1);
+
     }
 
 }
