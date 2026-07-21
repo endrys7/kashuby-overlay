@@ -3,7 +3,7 @@ const mensajes=[
 {
 texto:"CANJEA EL CODIGO",
 tiempo:3000,
-color:"#FFD701"
+color:"#FFD700"
 },
 
 {
