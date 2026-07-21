@@ -1,51 +1,59 @@
 const mensajes=[
 
 {
-texto:"⭐ CANJEA EL CÓDIGO ⭐",
-color:"#FFD700",
-duracion:6000
+
+texto:"CANJEA EL CÓDIGO",
+
+color:"#D4AF37",
+
+tiempo:3000
+
 },
 
 {
-texto:"🎮 KASHUBY-LATAM 🎮",
-color:"#00E5FF",
-duracion:6000
+
+texto:"KASHUBY-LATAM",
+
+color:"#39FF88",
+
+tiempo:5000
+
 }
 
 ];
 
-const contenedor=document.getElementById("mensaje");
+const mensaje=document.getElementById("mensaje");
 
-let indice=0;
+let actual=0;
 
-function mostrar(){
+function cambiarMensaje(){
 
-contenedor.innerHTML="";
+mensaje.style.opacity=0;
 
-const span=document.createElement("span");
+setTimeout(()=>{
 
-span.innerHTML=mensajes[indice].texto;
+mensaje.innerHTML=mensajes[actual].texto;
 
-span.style.color=mensajes[indice].color;
+mensaje.style.color=mensajes[actual].color;
 
-span.style.animationDuration=mensajes[indice].duracion+"ms";
+mensaje.style.opacity=1;
 
-contenedor.appendChild(span);
+setTimeout(()=>{
 
-span.addEventListener("animationend",()=>{
+actual++;
 
-indice++;
+if(actual>=mensajes.length){
 
-if(indice>=mensajes.length){
-
-indice=0;
+actual=0;
 
 }
 
-mostrar();
+cambiarMensaje();
 
-});
+},mensajes[actual].tiempo);
+
+},400);
 
 }
 
-mostrar();
+cambiarMensaje();
