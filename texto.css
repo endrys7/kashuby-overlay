@@ -5,49 +5,48 @@
 }
 
 html,body{
-
     width:100%;
     height:100%;
-    overflow:hidden;
     background:transparent;
-
+    overflow:hidden;
     font-family:'Orbitron',sans-serif;
-
 }
 
 #mensaje{
-
     position:absolute;
-
     top:40px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:1400px;
-
-    text-align:center;
-
+    left:0;
+    width:100%;
+    overflow:hidden;
     white-space:nowrap;
+}
 
-    font-size:68px;
+#mensaje span{
 
+    display:inline-block;
+
+    padding-left:100%;
+
+    font-size:70px;
     font-weight:900;
 
-    color:white;
-
-    letter-spacing:2px;
-
-    opacity:0;
-
-    transition:opacity .5s ease;
-
     text-shadow:
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 40px currentColor;
 
-    0 0 10px currentColor,
-    0 0 20px currentColor,
-    0 0 40px currentColor,
-    0 0 60px currentColor;
+    animation:marquesina linear forwards;
+
+}
+
+@keyframes marquesina{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-200%);
+    }
 
 }
