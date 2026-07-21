@@ -1,57 +1,51 @@
-const mensajes = [
+const mensajes=[
 
 {
 texto:"CANJEA EL CÓDIGO",
-color:"#FFD700",
+tiempo:3000,
+color:"#FFD700"
 },
 
 {
 texto:"KASHUBY-LATAM",
-color:"#00D4FF",
+tiempo:5000,
+color:"#00E5FF"
 }
 
 ];
 
-let indice = 0;
+const mensaje=document.getElementById("mensaje");
 
-const mensaje = document.getElementById("mensaje");
+let actual=0;
 
-function siguienteMensaje(){
+function mostrar(){
 
-mensaje.innerHTML = mensajes[indice].texto;
-mensaje.style.color = mensajes[indice].color;
+mensaje.style.opacity=0;
 
-mensaje.animate(
+setTimeout(()=>{
 
-[
-{ left:"100%" },
+mensaje.innerHTML=mensajes[actual].texto;
 
-{ left:"-120%" }
+mensaje.style.color=mensajes[actual].color;
 
-],
+mensaje.style.opacity=1;
 
-{
+setTimeout(()=>{
 
-duration:8000,
+actual++;
 
-iterations:1,
+if(actual>=mensajes.length){
 
-easing:"linear"
+actual=0;
 
 }
 
-);
+mostrar();
 
-indice++;
+},mensajes[actual].tiempo);
 
-if(indice>=mensajes.length){
-
-indice=0;
+},500);
 
 }
 
-}
-
-siguienteMensaje();
-
-setInterval(siguienteMensaje,8000);
+mostrar();
