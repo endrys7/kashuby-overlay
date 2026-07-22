@@ -1,4 +1,4 @@
-const mensajes=[
+const mensajes = [
 
 {
 
@@ -7,6 +7,16 @@ texto:"CANJEA EL CÓDIGO",
 color:"#D4AF37",
 
 tiempo:3000
+
+},
+
+{
+
+texto:"RECLAMA 10K PARACOINS",
+
+color:"#FF8C00",
+
+tiempo:5000
 
 },
 
@@ -22,37 +32,37 @@ tiempo:5000
 
 ];
 
-const mensaje=document.getElementById("mensaje");
+const mensaje = document.getElementById("mensaje");
 
-let actual=0;
+let actual = 0;
 
 function cambiarMensaje(){
 
-mensaje.style.opacity=0;
+    mensaje.style.opacity = 0;
 
-setTimeout(()=>{
+    setTimeout(()=>{
 
-mensaje.innerHTML=mensajes[actual].texto;
+        mensaje.innerHTML = mensajes[actual].texto;
 
-mensaje.style.color=mensajes[actual].color;
+        mensaje.style.color = mensajes[actual].color;
 
-mensaje.style.opacity=1;
+        mensaje.style.opacity = 1;
 
-setTimeout(()=>{
+        setTimeout(()=>{
 
-actual++;
+            actual++;
 
-if(actual>=mensajes.length){
+            if(actual >= mensajes.length){
 
-actual=0;
+                actual = 0;
 
-}
+            }
 
-cambiarMensaje();
+            cambiarMensaje();
 
-},mensajes[actual].tiempo);
+        }, mensajes[actual].tiempo);
 
-},400);
+    },400);
 
 }
 
