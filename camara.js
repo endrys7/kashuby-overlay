@@ -1,3 +1,3 @@
-const url="AQUI_PEGA_TU_URL_DE_VDO_NINJA";
+const url="https://vdo.ninja/?view=RngAaQJ";
 
 document.getElementById("camara").src=url;
