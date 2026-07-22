@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Panel Cámara</title>
+
+<style>
+
+body{
+
+background:#202124;
+
+color:white;
+
+font-family:Arial;
+
+padding:40px;
+
+}
+
+input{
+
+width:400px;
+
+}
+
+label{
+
+display:block;
+
+margin-top:25px;
+
+font-size:20px;
+
+}
+
+.valor{
+
+font-size:22px;
+
+color:#00ff88;
+
+}
+
+button{
+
+margin-top:40px;
+
+padding:15px 30px;
+
+font-size:20px;
+
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Panel Cámara</h1>
+
+<label>
+
+Zoom
+
+<input id="zoom"
+
+type="range"
+
+min="1"
+
+max="3"
+
+step="0.05"
+
+value="1.3">
+
+<span id="valorZoom" class="valor"></span>
+
+</label>
+
+<label>
+
+Mover X
+
+<input id="x"
+
+type="range"
+
+min="-50"
+
+max="50"
+
+step="1"
+
+value="0">
+
+<span id="valorX" class="valor"></span>
+
+</label>
+
+<label>
+
+Mover Y
+
+<input id="y"
+
+type="range"
+
+min="-50"
+
+max="50"
+
+step="1"
+
+value="0">
+
+<span id="valorY" class="valor"></span>
+
+</label>
+
+<button onclick="guardar()">
+
+Guardar
+
+</button>
+
+<script>
+
+const zoom=document.getElementById("zoom");
+
+const x=document.getElementById("x");
+
+const y=document.getElementById("y");
+
+function actualizar(){
+
+valorZoom.innerHTML=zoom.value;
+
+valorX.innerHTML=x.value;
+
+valorY.innerHTML=y.value;
+
+}
+
+zoom.oninput=actualizar;
+
+x.oninput=actualizar;
+
+y.oninput=actualizar;
+
+actualizar();
+
+function guardar(){
+
+localStorage.setItem("zoom",zoom.value);
+
+localStorage.setItem("x",x.value);
+
+localStorage.setItem("y",y.value);
+
+alert("Configuración guardada");
+
+}
+
+</script>
+
+</body>
+
+</html>
