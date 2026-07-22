@@ -1,18 +1,14 @@
-const url = "https://vdo.ninja/?view=CgNEpKZ";
+const url="https://vdo.ninja/?view=CgNEpKZ";
 
-/**************
-CONFIGURACIÓN
-**************/
+const iframe=document.getElementById("camara");
 
-const zoom = 1.35;
+iframe.src=url;
 
-const moverX = -12;
+const zoom=localStorage.getItem("zoom") || 1.3;
 
-const moverY = -6;
+const x=localStorage.getItem("x") || 0;
 
-document.getElementById("camara").src = url;
+const y=localStorage.getItem("y") || 0;
 
-const cam = document.getElementById("camara");
-
-cam.style.transform =
-`translate(${moverX}%,${moverY}%) scale(${zoom})`;
+iframe.style.transform=
+`translate(${x}%,${y}%) scale(${zoom})`;
