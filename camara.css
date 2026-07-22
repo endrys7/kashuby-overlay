@@ -43,11 +43,12 @@ box-shadow:
 
 #camara{
 
-width:100%;
-height:100%;
+    width:100%;
+    height:100%;
 
-border:none;
+    border:none;
 
+    object-fit:cover;
 }
 
 #nombre{
