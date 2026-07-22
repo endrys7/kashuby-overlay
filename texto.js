@@ -6,6 +6,8 @@ texto:"CANJEA EL CÓDIGO",
 
 color:"#D4AF37",
 
+tamano:"72px",
+
 tiempo:3000
 
 },
@@ -14,7 +16,9 @@ tiempo:3000
 
 texto:"RECLAMA 10K PARACOINS",
 
-color:"#FF8C00",
+color:"#FFB000",
+
+tamano:"58px",
 
 tiempo:5000
 
@@ -25,6 +29,8 @@ tiempo:5000
 texto:"KASHUBY-LATAM",
 
 color:"#39FF88",
+
+tamano:"72px",
 
 tiempo:5000
 
@@ -43,9 +49,8 @@ function cambiarMensaje(){
     setTimeout(()=>{
 
         mensaje.innerHTML = mensajes[actual].texto;
-
         mensaje.style.color = mensajes[actual].color;
-
+        mensaje.style.fontSize = mensajes[actual].tamano;
         mensaje.style.opacity = 1;
 
         setTimeout(()=>{
