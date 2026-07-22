@@ -4,7 +4,7 @@ const iframe=document.getElementById("camara");
 
 iframe.src=url;
 
-const zoom=localStorage.getItem("zoom") || 1.3;
+const zoom=localStorage.getItem("zoom") || 1.55;
 
 const x=localStorage.getItem("x") || 0;
 
