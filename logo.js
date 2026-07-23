@@ -1,36 +1,43 @@
-const logo=document.getElementById("logo");
+const logo = document.getElementById("logo"); // o el id que uses
 
-let posicion=0;
+let x = 0;
+let y = 0;
+let dx = 2;
+let dy = 2;
 
-let direccion=1;
+function mover() {
 
-const velocidad=0.35;
+    const ancho = logo.offsetWidth;
+    const alto = logo.offsetHeight;
 
-// 1080 de ancho
-// 220 ancho del logo
+    x += dx;
+    y += dy;
 
-const limite=860;
-
-function animar(){
-
-    posicion+=velocidad*direccion;
-
-    if(posicion>=limite){
-
-        direccion=-1;
-
+    // Rebote horizontal
+    if (x <= 0) {
+        x = 0;
+        dx = Math.abs(dx);
     }
 
-    if(posicion<=0){
-
-        direccion=1;
-
+    if (x + ancho >= window.innerWidth) {
+        x = window.innerWidth - ancho;
+        dx = -Math.abs(dx);
     }
 
-    logo.style.left=posicion+"px";
+    // Rebote vertical
+    if (y <= 0) {
+        y = 0;
+        dy = Math.abs(dy);
+    }
 
-    requestAnimationFrame(animar);
+    if (y + alto >= window.innerHeight) {
+        y = window.innerHeight - alto;
+        dy = -Math.abs(dy);
+    }
 
+    logo.style.transform = `translate(${x}px, ${y}px)`;
+
+    requestAnimationFrame(mover);
 }
 
-animar();
+mover();
