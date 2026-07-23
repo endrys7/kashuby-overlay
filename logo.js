@@ -13,28 +13,28 @@ function mover() {
     x += dx;
     y += dy;
 
-    const maxX = contenedor.clientWidth - logo.offsetWidth;
-    const maxY = contenedor.clientHeight - logo.offsetHeight;
+    const maxX = 1080 - logo.getBoundingClientRect().width;
+    const maxY = 400 - logo.getBoundingClientRect().height;
 
-    if (x <= 0) {
-        x = 0;
-        dx *= -1;
-    }
+    if (x < 0) {
+    x = 0;
+    dx = Math.abs(dx);
+}
 
-    if (x >= maxX) {
-        x = maxX;
-        dx *= -1;
-    }
+if (x > maxX) {
+    x = maxX;
+    dx = -Math.abs(dx);
+}
 
-    if (y <= 0) {
-        y = 0;
-        dy *= -1;
-    }
+if (y < 0) {
+    y = 0;
+    dy = Math.abs(dy);
+}
 
-    if (y >= maxY) {
-        y = maxY;
-        dy *= -1;
-    }
+if (y > maxY) {
+    y = maxY;
+    dy = -Math.abs(dy);
+}
 
     logo.style.left = x + "px";
     logo.style.top = y + "px";
