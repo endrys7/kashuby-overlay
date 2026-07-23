@@ -1,40 +1,42 @@
 const logo = document.getElementById("logo");
-
 const contenedor = document.getElementById("contenedor");
 
 let x = 0;
-let y = (contenedor.clientHeight - logo.offsetHeight) / 2;
+let y = 0;
 
 let dx = 2;
 let dy = 2;
 
-function mover() {
+function mover(){
+
+    const logoW = logo.getBoundingClientRect().width;
+    const logoH = logo.getBoundingClientRect().height;
+
+    const maxX = contenedor.clientWidth - logoW;
+    const maxY = contenedor.clientHeight - logoH;
 
     x += dx;
     y += dy;
 
-    const maxX = 1080 - logo.getBoundingClientRect().width;
-    const maxY = 400 - logo.getBoundingClientRect().height;
+    if(x <= 0){
+        x = 0;
+        dx *= -1;
+    }
 
-    if (x < 0) {
-    x = 0;
-    dx = Math.abs(dx);
-}
+    if(x >= maxX){
+        x = maxX;
+        dx *= -1;
+    }
 
-if (x > maxX) {
-    x = maxX;
-    dx = -Math.abs(dx);
-}
+    if(y <= 0){
+        y = 0;
+        dy *= -1;
+    }
 
-if (y < 0) {
-    y = 0;
-    dy = Math.abs(dy);
-}
-
-if (y > maxY) {
-    y = maxY;
-    dy = -Math.abs(dy);
-}
+    if(y >= maxY){
+        y = maxY;
+        dy *= -1;
+    }
 
     logo.style.left = x + "px";
     logo.style.top = y + "px";
@@ -42,4 +44,16 @@ if (y > maxY) {
     requestAnimationFrame(mover);
 }
 
-mover();
+logo.onload = () => {
+
+    y = (contenedor.clientHeight - logo.getBoundingClientRect().height) / 2;
+
+    mover();
+
+};
+
+// Por si la imagen ya estaba cargada desde caché
+if (logo.complete) {
+    y = (contenedor.clientHeight - logo.getBoundingClientRect().height) / 2;
+    mover();
+}
