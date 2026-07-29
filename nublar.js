@@ -6,7 +6,7 @@ texto:"CANJEA ESTOS CÓDIGOS",
 
 color:"#D4AF37",
 
-tamano:"72px",
+tamano:"62px",
 
 tiempo:3000
 
