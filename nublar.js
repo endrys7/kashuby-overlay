@@ -46,7 +46,15 @@ tamano:"60px",
 
 tiempo:5000
 
-}
+},
+
+{
+texto:"SERVER:<br>ISLA NUBLAR",
+color:"#00E5FF",
+tamano:"60px",
+tiempo:5000
+}    
+    
 ];
 
 const mensaje = document.getElementById("mensaje");
