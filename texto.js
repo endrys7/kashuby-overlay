@@ -35,30 +35,6 @@ tamano:"72px",
 tiempo:5000
 
 }
-
-{
-
-texto:"SERVERON",
-
-color:"#39FF88",
-
-tamano:"72px",
-
-tiempo:5000
-
-}
-
-{
-
-texto:"BIENVENIDA",
-
-color:"#39FF88",
-
-tamano:"72px",
-
-tiempo:5000
-
-}    
     
 ];
 
