@@ -46,7 +46,21 @@ tamano:"60px",
 
 tiempo:5000
 
-}
+},
+
+{
+
+texto:"
+    SERVER:
+ISLA NUBLAR",
+
+color:"#D4AF37",
+
+tamano:"60px",
+
+tiempo:5000
+
+}    
 
 ];
 
